@@ -6,22 +6,28 @@
 
     <div class="card-body">
 
-        <form>
+        <!-- [formGroup]="formularioDeEmpleados" es lo que hace la conexion en el component.ts -->
+
+        <form [formGroup]="formularioaDeEmpleados" (ngSubmit)="enviarDatos()">
 
             <div class="form-group mb-3">
                 <label for="">Nombre:</label>
-                <input type="text" class="form-control" name="" id="" aria-describedby="helpId"
-                    placeholder="Escribe un nombre">
+                <!-- formControlName es lo que recepciona el dato -->
+                <input type="text" class="form-control"
+                formControlName="nombre" name="" id="" aria-describedby="helpId"
+                placeholder="Escribe un nombre">
             </div>
 
             <div class="form-group mb-3">
                 <label for="">Email:</label>
-                <input type="email" class="form-control" name="" id="" aria-describedby="helpId2"
-                    placeholder="Escribe un correo">
+                <!-- formControlName es lo que recepciona el dato -->
+                <input type="email" class="form-control"
+                formControlName="correo" name="" id="" aria-describedby="helpId2"
+                placeholder="Escribe un correo">
             </div>
 
             <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-success">Agregar</button>
+                <button type="submit" class="btn btn-success">Agregar</button>
                 <button type="button" class="btn btn-primary">Cancelar</button>
             </div>
 
