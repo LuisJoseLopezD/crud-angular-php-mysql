@@ -15,11 +15,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>luis lopez</td>
-                    <td>luisjoselopezd@gmail.com</td>
-                    <td><a routerLink="../editar-empleado/1">Editar</a> | Borrar</td>
+                <tr *ngFor="let empleado of Empleados; let i=index">
+                    <td>{{empleado.id}}</td>
+                    <td>{{empleado.nombre}}</td>
+                    <td>{{empleado.correo}}</td>
+                    <td><a routerLink="../editar-empleado/{{empleado.id}}">Editar</a> | Borrar</td>
                 </tr>
             </tbody>
         </table>

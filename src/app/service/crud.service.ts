@@ -13,7 +13,7 @@ import { Empleado } from './empleado';
 })
 export class CrudService {
 
-  API: string = "http://localhost/empleados";
+  API: string = "http://localhost/empleados/"; // API de PHP, EXPRESS, GO, PYTHON
 
   constructor(private clienteHttp:HttpClient) {  }
 
@@ -21,4 +21,10 @@ export class CrudService {
     return this.clienteHttp.post(this.API+"?insertar=1",datosEmpleado);
   }
 
+  ObtenerEmpleados(){
+    return this.clienteHttp.get(this.API);
+  }
+
 }
+
+// En esta parte fue donde nos conectamos con la API con el archivo de php
