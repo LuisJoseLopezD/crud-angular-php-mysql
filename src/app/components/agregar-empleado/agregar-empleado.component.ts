@@ -20,7 +20,7 @@ export class AgregarEmpleadoComponent implements OnInit {
 
   // private crudService: es declarar el servicio para utilizarlo
   // También debemos declarar las rutas en el constructor
-  // private de privado, ruteador de un nombre cualquier y Router que es el nombre propio de angular
+  // private de privado, ruteador de un nombre cualquiera y Router que es el nombre propio de angular
 
   constructor(
     public formulario:FormBuilder,

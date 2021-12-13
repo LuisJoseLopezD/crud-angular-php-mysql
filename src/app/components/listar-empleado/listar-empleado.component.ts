@@ -25,4 +25,14 @@ export class ListarEmpleadoComponent implements OnInit {
     })
   }
 
+  borrarRegistro(id:any,i:any){
+    console.log(id);
+    console.log(i);
+    if(window.confirm("¿Desea borrar el registro?")){
+      this.crudService.BorrarEmpleado(id).subscribe((respuesta)=>{
+        this.Empleados.splice(i,1);
+      });
+  }
+  }
+
 }

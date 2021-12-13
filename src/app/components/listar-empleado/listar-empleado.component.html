@@ -19,7 +19,10 @@
                     <td>{{empleado.id}}</td>
                     <td>{{empleado.nombre}}</td>
                     <td>{{empleado.correo}}</td>
-                    <td><a routerLink="../editar-empleado/{{empleado.id}}">Editar</a> | Borrar</td>
+                    <td>
+                        <a routerLink="../editar-empleado/{{empleado.id}}" class="btn btn-info">Editar</a> |
+                        <a (click)="borrarRegistro(empleado.id,i)" class="btn btn-danger">Borrar</a>
+                    </td>
                 </tr>
             </tbody>
         </table>

@@ -6,7 +6,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 // Necesitamos también el modelo para la estructura de los datos
-import { Empleado } from './empleado';
+import { Empleado } from './Empleado';
+import { AttributeMarker } from '@angular/compiler/src/core';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,21 @@ export class CrudService {
     return this.clienteHttp.post(this.API+"?insertar=1",datosEmpleado);
   }
 
+  BorrarEmpleado(id:any):Observable<any>{
+    return this.clienteHttp.get(this.API+"?borrar=1"+id);
+  }
+
   ObtenerEmpleados(){
     return this.clienteHttp.get(this.API);
+  }
+  
+  // Obtener empleado para consultar
+  ObtenerEmpleado(id:any):Observable<any>{
+    return this.clienteHttp.get(this.API+"?consultar="+id);
+  }
+
+  EditarEmpleado(id:any,datosEmpleado:any):Observable<any>{
+    return this.clienteHttp.post(this.API+"?actualizar="+id,datosEmpleado);
   }
 
 }
